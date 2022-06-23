@@ -1,0 +1,35 @@
+<div class="texts">
+    <h2>Search For a Cooler City To Watch Background Change</h2>
+</div>
+<div class="search">
+    <form #form="ngForm" (submit)="onSubmit()">
+        <input type="text" placeholder="Search City Here! :)" name="city" [(ngModel)]="cityName">
+    </form>
+</div>
+
+<div class="container" *ngIf="weatherData">
+    <div class="upper-data">
+        <img src="../assets/Converted.png" *ngIf="weatherData.main.temp > 18">
+        <img src="../assets/converted 2.png" *ngIf="weatherData.main.temp <= 18">
+        <div class="weather-data">
+            <div class="location">{{weatherData.name}}</div>
+            <div class="temperature">{{ weatherData.main.temp | number:'1.0-0' }}°C</div>
+        </div>
+        <div class="lower-data">
+
+        </div>
+    </div>
+
+    <!-- <div class="container">
+    <div class="upper-data">
+        <img src="../assets/pngtree-mobile-app-flash-landscape-image_937181.png">
+        <img src="../assets/pngtree-warm-reminder-poster-in-cold-weather-png-image_7358685.png">
+        <div class="weather-data">
+            <div class="location">Nashik</div>
+            <div class="temperature">{{14.40|number:'1.0-0'}}°C</div>
+        </div>
+        <div class="lower-data">
+
+        </div>
+    </div> -->
+    <router-outlet></router-outlet>
